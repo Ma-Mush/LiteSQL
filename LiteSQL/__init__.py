@@ -23,11 +23,12 @@ class lsql():
         self.conn.commit()
         
     def edit_data(self, title_last, last, title_new, new, table="albums"):
-        self.cursor.execute(f"UPDATE {table} SET {title_new} = {new} WHERE {title_last} = {last}")
+        self.cursor.execute(f"UPDATE {table} SET {title_new} = ? WHERE {title_last} = ?",
+                            [(new), (last)])
         self.conn.commit()  
         
     def delete_data(self, name, title_name, table="albums"):
-        self.cursor.execute(f"DELETE FROM {table} WHERE {title_name} = {name}")
+        self.cursor.execute(f"DELETE FROM {table} WHERE {title_name} = ?", [(name)])
         
     def select_data(self, name, title, row_factor=False, table="albums"):
         self.cursor.execute(f"SELECT * FROM {table} WHERE {title}=?", [(name)])
