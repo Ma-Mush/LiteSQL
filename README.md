@@ -85,7 +85,7 @@ name_search | имя, которое мы ищем (в том числе с по
 
 # Примеры
 ```python
-from LiteSQL.LiteSQL.__init__ import lsql
+from LiteSQL import lsql
 sql = lsql('test_LiteSQL1111') #Соединяемся с БД по имени test_LiteSQL.bd
 sql.create('id, hash') #Создаем 2 столбца - id и hash
 sql.insert_data([('234', '234'), ('3234235', '134234234')], 2) #Добавляем данные
