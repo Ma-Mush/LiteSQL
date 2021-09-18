@@ -3,6 +3,7 @@
 # Гитхаб - github.com/Ma-Mush/LiteSQL
 # PypI - pypi.org/project/litesql/
 # =============================================================================
+
 import sqlite3
 class lsql():
     def __init__(self, file):
@@ -29,6 +30,7 @@ class lsql():
         
     def delete_data(self, name, title_name, table="albums"):
         self.cursor.execute(f"DELETE FROM {table} WHERE {title_name} = ?", [(name)])
+        self.conn.commit()
         
     def select_data(self, name, title, row_factor=False, table="albums"):
         self.cursor.execute(f"SELECT * FROM {table} WHERE {title}=?", [(name)])
