@@ -3,6 +3,7 @@
 # Гитхаб - github.com/Ma-Mush/LiteSQL
 # PypI - pypi.org/project/litesql/
 # =============================================================================
+
 import sqlite3
 class lsql():
     def __init__(self, file):
