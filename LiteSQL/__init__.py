@@ -29,6 +29,7 @@ class lsql():
         
     def delete_data(self, name, title_name, table="albums"):
         self.cursor.execute(f"DELETE FROM {table} WHERE {title_name} = ?", [(name)])
+        self.conn.commit()
         
     def select_data(self, name, title, row_factor=False, table="albums"):
         self.cursor.execute(f"SELECT * FROM {table} WHERE {title}=?", [(name)])
